@@ -1,4 +1,4 @@
-# Triex
+# Triex SkyBranch
 
 Repository for group 36, TDT4140, Spring 2018. 
 This project was started as a university assignment to learn more about programming and agile development in teams and was based on a the template project [tdt4140-gr18nn](https://gitlab.stud.iie.ntnu.no/tdt4140-staff/examples/tree/master/tdt4140-gr18nn).
