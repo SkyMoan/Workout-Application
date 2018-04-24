@@ -1,0 +1,181 @@
+.parent {
+    -fx-background-color:  #263238;
+    -fx-pref-width: 800;
+    -fx-pref-height: 480;
+}
+
+.grid {
+    -fx-pref-width: 400;
+}
+
+.text-field {
+    -fx-prompt-text-fill:  #90A4AE;
+    -fx-text-fill: #eceff1;
+}
+
+.text-area {
+    -fx-prompt-text-fill:  #90A4AE;
+    -fx-text-fill: #eceff1;
+}
+
+.invalid {
+    -fx-text-fill: #ff1744;
+}
+
+.card {
+    -fx-background-color: #ffffff;
+    -fx-pref-width: 100;
+    -fx-pref-width: 220;
+    -fx-background-radius: 2;
+}
+
+.cardLabel {
+    -fx-text-fill: #4e4e4e;
+}
+
+.normal-button {
+    -fx-background-color: #2962FF;
+    -fx-text-fill: #e3f2fd;
+    -fx-min-width: 86;
+    -fx-pref-height: 44;
+    -fx-cursor:hand;
+}
+
+.radio {
+    -fx-text-fill: #eceff1;
+}
+
+.btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #eceff1;
+}
+
+.label {
+    -fx-text-fill: #90A4AE;
+}
+
+.btn:hover {
+    -fx-background-color: #37474F;
+    -fx-cursor:hand;
+}
+
+.btn:pressed {
+    -fx-padding: 3 0 0 30;
+}
+
+.vbox {
+    -fx-border-color: #37474F;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-style: solid;
+}
+.hbox{
+    -fx-border-color: #37474F;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-style: solid;
+}
+.scrollpane >.viewport, .scrollpane{
+    -fx-background-color: transparent;
+}
+.send:hover{
+    -fx-opacity:1;
+    -fx-cursor:hand;
+}
+.message{
+    -fx-background-color:#2962FF;
+    -fx-text-fill:#e3f2fd;
+    -fx-text-alignment:left;
+    -fx-padding: 5;
+    -fx-border-radius:5;
+    -fx-background-radius:5;
+
+}
+.topPanel{
+    -fx-border-width: 0 0 1 0;
+    -fx-border-style:solid;
+    -fx-border-color: #37474F;
+}
+/* Scroll bar styling */
+.scroll-bar:vertical .thumb{
+    -fx-background-color:#3F5D5F;
+    -fx-background-radius:5em;
+}
+.scroll-bar:vertical .thumb:hover, .scroll-bar:vertical .thumb:pressed{
+    -fx-background-color:#5B8988;
+    -fx-background-radius:5em;
+}
+.scroll-bar:vertical .track:hover{
+    -fx-background-color:#2F3A3F;
+}
+.scroll-bar:vertical:hover .track, .scroll-bar:vertical:pressed .track{
+    -fx-background-color:#2F3A3F;
+}
+.scroll-bar:vertical .track{
+    -fx-background-color:#263238;
+    -fx-border-color : #263238;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+}
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+   -fx-shape : " ";    
+   -fx-padding :0.15em 0.0;
+}
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+   -fx-shape : " ";    
+   -fx-padding :0.0 0.15em;
+}
+
+/* Graph styling here */
+.chart{
+    -fx-background-color:transparent;
+    -fx-text-fill:#90A4AE;
+    -fx-padding:5px;
+}
+.number-axis,.category-axis,.axis-label,.char-title{
+    -fx-text-fill:#90A4AE;
+}
+.chart-plot-background{
+    -fx-background-color:transparent;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke:#3F5D5F;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #3F5D5F;
+}
+.chart-alternative-row-fill {
+    -fx-fill:transparent;
+    -fx-stroke: transparent;
+}
+.chart-bar{
+    -fx-background-color:#00e6e2;
+}
+.axis{
+    -fx-tick-label-fill:#90A4AE;
+
+}
+.onHover{
+    -fx-background-color:#b3fffe;
+}
+.TableView{
+   -fx-background-color: transparent;
+   -fx-text-fill: white; 
+}
+
+.TableView .column-header-background .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: white; 
+}
+
+.TableView .table-cell{
+    -fx-text-fill: white;
+    -fx-background-color: transparent; 
+}

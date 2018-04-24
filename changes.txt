@@ -1,0 +1,7 @@
+-- removed some files not used anymore
+- removed some unused variables
+- structured fxml files, stylesheet and images into different folders
+- created a layout handler to keep tracks of path to different layout files
+- removed hard coded paths to layout files and replaced them with references to the layout handler
+- removed all except one System.out.println()
+- implemented Thomas' new inbox layout, inbox controller and updates stylesheet
