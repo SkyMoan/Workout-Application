@@ -1,7 +1,7 @@
 # MemeEX
 
-Repository for group 36, TDT4140, Spring 2018. 
-This project was started as a university assignment to learn more about programming and agile development in teams and was based on a the template project [tdt4140-gr18nn](https://gitlab.stud.iie.ntnu.no/tdt4140-staff/examples/tree/master/tdt4140-gr18nn).
+
+This project was started as a university assignment to learn more about programming and agile development in teams.
 
 This is an app where a user can register their workouts and get feedback from different coaches by their choosing. 
 The app began as a simple workout logger app, but developed into a more specific Triathlon app as you can post run, swim or bike sessions. 
@@ -12,7 +12,7 @@ This can be used by users looking for partners to work out with or to simply com
 
 ## Getting Started
 
-To get started download the project files from GitLab.
+To get started download the project files from GitHub.
 
 ### Prerequisites
 
@@ -74,21 +74,15 @@ From here you have a few options:
 * [JFoenix](https://github.com/jfoenixadmin/JFoenix) - JavaFX design
 
 
-##Database
+## Database
 
-*[Firebase](https://console.firebase.google.com/project/tdt4140-g36/database/tdt4140-g36/data)
+* [Firebase](https://console.firebase.google.com/project/tdt4140-g36/database/tdt4140-g36/data)
     -   Requires Permission
 
 
 ## Authors
 
 To be decided.
-
-
-
-
-
-See also the list of [contributors](https://gitlab.stud.iie.ntnu.no/tdt4140-2018/36/graphs/master) who participated in this project.
 
 ## License
 
