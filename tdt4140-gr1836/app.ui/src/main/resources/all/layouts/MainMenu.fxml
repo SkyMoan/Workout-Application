@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" styleClass="parent" stylesheets="@../Styles/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="all.Controllers.MainMenuController">
+   <children>
+      <VBox layoutX="-16.0" layoutY="14.0" prefHeight="480.0" prefWidth="220.0" styleClass="vbox">
+         <children>
+            <Label fx:id="newWorkoutButton" onMouseClicked="#onNewCardioWorkout" prefHeight="42.0" prefWidth="220.0" styleClass="btn" text="New workout">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="historyButton" onMouseClicked="#onHistory" prefHeight="42.0" prefWidth="220.0" styleClass="btn" text="Workout history">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="inboxButton" onMouseClicked="#onInbox" prefHeight="42.0" prefWidth="220.0" styleClass="btn" text="Inbox">
+               <padding>
+                  <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="coachesButton" onMouseClicked="#onCoaches" prefHeight="42.0" prefWidth="220.0" styleClass="btn" text="Available coaches">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="statisticsButton" onMouseClicked="#OnStatistics" prefHeight="42.0" prefWidth="220.0" styleClass="btn" text="Statistics">
+               <padding>
+                  <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="logoutButton" onMouseClicked="#onLogOut" prefHeight="42.0" prefWidth="220.0" styleClass="btn" text="Log out">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="40.0" />
+         </padding>
+      </VBox>
+      <Pane fx:id="chartPane" layoutX="205.0" layoutY="34.0" prefHeight="387.0" prefWidth="562.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <BarChart fx:id="barChart" barGap="0.0" categoryGap="3.0" legendVisible="false" title="Average Pulse of Recent Workouts" verticalGridLinesVisible="false">
+              <xAxis>
+                <CategoryAxis animated="false" label="Date" side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" label="Average Pulse" side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
