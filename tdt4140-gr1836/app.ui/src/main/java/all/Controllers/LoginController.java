@@ -2,7 +2,7 @@ package all.Controllers;
 
 import java.io.IOException;
 
-import all.MainController;
+import all.SuperController;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import Users.User;
 
-public class LoginController extends MainController {
+public class LoginController extends SuperController {
 
 	@FXML
 	private JFXTextField usernameField;

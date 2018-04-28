@@ -23,39 +23,40 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import Inbox.Message;
-import all.MainController;
+import all.SuperController;
 import all.LayoutHandler;
 import Users.User;
 import Users.UserTempList;
 
 @SuppressWarnings("restriction")
-public class InboxController extends MainController {
+public class InboxController extends SuperController {
 
 	@FXML
-	private JFXTextField messageField;
+	private JFXTextField messageField, searchField;
+
 	@FXML
-	private JFXTextField searchField;
-	@FXML
-	private VBox messageFrame;
-	@FXML
-	private VBox people;
-	@FXML
-	private VBox assigned;
-	@FXML
-	private VBox latestConversations;
+	private VBox messageFrame, people, assigned, latestConversations, infoPanel;
+
 	@FXML
 	private ScrollPane scrollpane;
-	@FXML
-	private VBox infoPanel;
+
 	@FXML
 	private Label coachorclientLabel;
+
+	@FXML
 	private String currentChat = "default";
+
+	@FXML
 	private Image profile;
+
+	@FXML
 	private boolean first = false;
+
+	@FXML
 	private Map<String, UserTempList> nodeMap = new HashMap<>();
 
 	public void initialize() {
-		// Also make listeners to load chat for EACH label :(
+
 		Platform.runLater(() -> {
 			// Sets label for client or coach
 			if (app.getUser().getIsCoach()) {
@@ -90,7 +91,7 @@ public class InboxController extends MainController {
 	}
 
 	private void search(String newValue) {
-		// hide nodes if not match regex
+
 		for (Node u : assigned.getChildren()) {
 			if (nodeMap.get(u.getId()).getName().toLowerCase().contains(newValue.toLowerCase())) {
 				u.setManaged(true);
@@ -122,7 +123,7 @@ public class InboxController extends MainController {
 
 	}
 
-	private void generatePeople() { // works for coaches and users!!
+	private void generatePeople() {
 		ArrayList<UserTempList> otherUsers = parsePeople();
 		ArrayList<UserTempList> recentConv = getConvInList(app.getConversations());
 		ArrayList<UserTempList> myCoachOrClients = app.getUser().getIsCoach() ? app.getClients() : getCoachInList();
@@ -137,7 +138,7 @@ public class InboxController extends MainController {
 		}
 
 		// account image
-		profile = new Image(MainController.class.getResourceAsStream("images/ic_account_circle_white_24dp_2x.png"));
+		profile = new Image(SuperController.class.getResourceAsStream("images/ic_account_circle_white_24dp_2x.png"));
 
 		// add myCoach
 		for (UserTempList u : myCoachOrClients) {

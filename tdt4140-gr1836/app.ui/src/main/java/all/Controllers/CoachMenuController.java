@@ -5,49 +5,33 @@ import java.io.IOException;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import all.MainController;
+import all.SuperController;
 import all.LayoutHandler;
 
-public class CoachMenuController extends MainController {
+public class CoachMenuController extends SuperController {
+
 
 	@FXML
-	private Label logoutButton;
+	private void onInbox() throws IOException{
 
-	@FXML
-	private void initialize() {
-		// load username in logout button
-		Platform.runLater(() -> {
-			logoutButton.setText("Log out (" + app.getUser().getUsername() + ")");
-		});
-	}
-
-	@FXML
-	private void onInbox() {
-		try {
 			loadScene(LayoutHandler.inboxPane, this.getRoot(), this.app);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 	}
 
 	@FXML
-	private void onClients() {
-		try {
+	private void onClients() throws IOException {
+
 			loadScene(LayoutHandler.clientsPane, this.getRoot(), this.app);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 	}
 
 	@FXML
-	private void onLogOut() {
-		try {
+	private void onLogOut() throws IOException{
 			this.app.reset();
 			loadScene(LayoutHandler.loginPane, this.getRoot(), this.app);
 
-		} catch (IOException e) {
-			e.printStackTrace();
+
 		}
 	}
 
-}
+

@@ -1,7 +1,7 @@
 //Helper class which  for presenting a simple version of a user
 package Users;
 
-import all.users.Users;
+
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 
 public class UserTempList extends RecursiveTreeObject<UserTempList> {

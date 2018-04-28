@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import all.LayoutHandler;
-import all.MainController;
+import all.SuperController;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
@@ -20,10 +20,8 @@ import javafx.scene.control.TreeTableColumn;
 import Users.User;
 import Users.UserTempList;
 
-public class AvailableCoachesController extends MainController {
-	/*
-	 * @FXML private Button homeBtn;
-	 */
+public class AvailableCoachesController extends SuperController {
+
 	private Map<String, User> allCoaches;
 	@FXML
 	private Label coachLabel;
@@ -58,15 +56,12 @@ public class AvailableCoachesController extends MainController {
 			e.printStackTrace();
 		}
 	}
-	/*
-	 * private ArrayList<User> parseCoaches() { return this.app.getCoachesAsList();
-	 * }
-	 */
+
 
 	private void setCoaches() {
 		String myCoach = this.app.getUser().getMyCoach();
 		if (!myCoach.equals("")) {
-			coachLabel.setText("Your current coach is " + myCoach);
+			coachLabel.setText("Your coach is " + myCoach);
 		}
 		usernameColumn.setCellValueFactory(
 				(TreeTableColumn.CellDataFeatures<UserTempList, String> param) -> new ReadOnlyStringWrapper(
@@ -81,13 +76,13 @@ public class AvailableCoachesController extends MainController {
 				(TreeTableColumn.CellDataFeatures<UserTempList, String> param) -> new ReadOnlyStringWrapper(
 						param.getValue().getValue().getAge()));
 
-		// data
+
 		ObservableList<UserTempList> coaches = FXCollections.observableArrayList();
 
 		loadCoaches(coaches);
-		// Burde sortere coaches etter username her
 
-		// build tree
+
+
 		final TreeItem<UserTempList> root = new RecursiveTreeItem<UserTempList>(coaches,
 				RecursiveTreeObject::getChildren);
 		tableView.setRoot(root);
@@ -99,13 +94,13 @@ public class AvailableCoachesController extends MainController {
 		try {
 			allCoaches = app.getCoaches();
 
-			// userList.sort(null);
+
 			for (String s : allCoaches.keySet()) {
 				coaches.add(new UserTempList(allCoaches.get(s).getUsername(), allCoaches.get(s).getName(),
 						allCoaches.get(s).getCity(), Integer.toString(allCoaches.get(s).getAge())));
 			}
 		} catch (Exception e) {
-			// Label: "No coaches found"
+
 		}
 	}
 

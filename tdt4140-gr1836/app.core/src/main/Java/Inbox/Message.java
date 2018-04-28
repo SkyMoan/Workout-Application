@@ -1,4 +1,4 @@
-//Helper class for handling the message objects used for storing messages between users
+
 package Inbox;
 
 import java.io.Serializable;
@@ -6,16 +6,13 @@ import java.util.Date;
 
 @SuppressWarnings("serial")
 public class Message implements Serializable{
-	private String from;
-	private String to;
-	private String message;
-	private String date;
+	private String from, to, message, date;
 
 	public Message(String m, String to, String from){
-		this.from=(from);
-		this.to=(to);
-		this.message=(m);
-		this.date=(""+ new Date().getTime());
+		this.from= from;
+		this.to= to;
+		this.message= m;
+		this.date=""+ new Date().getTime();
 	}
 	public Message() {
 		

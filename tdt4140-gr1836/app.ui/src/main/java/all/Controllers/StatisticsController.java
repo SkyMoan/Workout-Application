@@ -13,41 +13,19 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import Statistics.Statistic;
 import Statistics.Statistics;
-import all.MainController;
+import all.SuperController;
 import all.LayoutHandler;
 
-public class StatisticsController extends MainController {
+public class StatisticsController extends SuperController {
 	private LinkedHashMap<String, Double> partners;
 	private int currentPartner;
 
+
 	@FXML
-	private Image image;
+	private JFXButton goButton, returnButton, nextButton, previousButton, historyButton;
+
 	@FXML
-	private JFXButton goButton;
-	@FXML
-	private JFXButton returnButton;
-	@FXML
-	private JFXButton nextButton;
-	@FXML
-	private JFXButton previousButton;
-	@FXML
-	private JFXButton historyButton;
-	@FXML
-	private Label avgLabel;
-	@FXML
-	private Label profileLabel;
-	@FXML
-	private Label questionLabel;
-	@FXML
-	private Label timeLabel;
-	@FXML
-	private Label avgPulseLabel;
-	@FXML
-	private Label maxPulseLabel;
-	@FXML
-	private Label kmRanLabel, kmSwamLabel, kmBikedLabel;
-	@FXML
-	private Label invalidLabel;
+	private Label avgLabel, profileLabel, questionLabel, timeLabel, avgPulseLabel, maxPulseLabel;
 
 	@FXML
 	private Label myRun, mySwim, myBike;
@@ -67,11 +45,7 @@ public class StatisticsController extends MainController {
 	@FXML
 	private Label userName, compName;
 
-	/*
-	 * Checks that user have typed a positive duration and chosen a date for new
-	 * cardio workout. Then submits the data to database and send user back to main
-	 * menu.
-	 */
+
 	@FXML
 	private void initialize() {
 
@@ -128,7 +102,7 @@ public class StatisticsController extends MainController {
 		Statistic myStatistic = app.getMyStatistics();
 		// Checks if we compare to city or users
 		if (comparingName != null) {
-			// pluss percent
+
 			matchPercent = matchPercent * 100;
 			int percent = (int) Math.round(matchPercent);
 			String namePercent = comparingName + " is a " + Integer.toString(percent) + "% match! ";
@@ -145,7 +119,7 @@ public class StatisticsController extends MainController {
 			compName.setText("Your city (" + app.getUser().getCity() + ")");
 		}
 
-		// Calculates average once to save time.
+
 
 		// Card 1 - Distance ran compared to other users in city for the last 30 days.
 		myRun.setText("" + myStatistic.getRunKm() + " Km");
@@ -160,9 +134,9 @@ public class StatisticsController extends MainController {
 		avgCityBike.setText("" + statistic.getBikeKm() + " Km");
 
 		// Card 4 - Time spent on each excercise type
-		timeSpentRunning.setText("" + profileStatistic.getRunMin() + " Minutes");
-		timeSpentSwimming.setText("" + profileStatistic.getSwimMin() + " Minutes");
-		timeSpentBiking.setText("" + profileStatistic.getBikeMin() + " Minutes");
+		timeSpentRunning.setText("" + timeSpent(profileStatistic.getRunMin()));
+		timeSpentSwimming.setText("" + timeSpent(profileStatistic.getBikeMin()));
+		timeSpentBiking.setText("" + timeSpent(profileStatistic.getSwimMin()));
 		
 
 		// Card 5 - Shows your estimated max pulse.
@@ -178,7 +152,7 @@ public class StatisticsController extends MainController {
 
 	@FXML
 	private void onFind() {
-		// Find partners, show their profiles?
+		// Find partners, show their profiles
 		partners = app.findPartners();
 
 		List<String> names = new ArrayList<String>(partners.keySet());
@@ -196,7 +170,7 @@ public class StatisticsController extends MainController {
 		timeLabel.setText("Time spent on exercises");
 		
 		avgLabel.setText("Average data for "+name);
-		//Set imageimage
+
 
 		goButton.setText("Send message!");
 		returnButton.setText("Cancel");

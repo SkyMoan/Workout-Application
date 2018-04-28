@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import all.LayoutHandler;
-import all.MainController;
+import all.SuperController;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
@@ -18,7 +18,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
 import Workouts.TempList;
 
-public class HistoryController extends MainController {
+public class HistoryController extends SuperController {
 
 	@FXML
 	private JFXTreeTableView<Workout> tableView;
@@ -63,7 +63,7 @@ public class HistoryController extends MainController {
 				(TreeTableColumn.CellDataFeatures<Workout, String> param) -> new ReadOnlyStringWrapper(
 						param.getValue().getValue().getDistance()));
 
-		// data
+
 		ObservableList<Workout> workouts = FXCollections.observableArrayList();
 		if (app.getUser().getIsCoach()) {
 			app.getClientsWorkouts(this.getClient());
@@ -71,7 +71,7 @@ public class HistoryController extends MainController {
 
 		loadWorkouts(workouts);
 
-		// build tree
+
 		final TreeItem<Workout> root = new RecursiveTreeItem<Workout>(workouts, RecursiveTreeObject::getChildren);
 		tableView.setRoot(root);
 		tableView.setShowRoot(false);
@@ -97,23 +97,20 @@ public class HistoryController extends MainController {
 						Double.toString(w.getDuration()), Double.toString(w.getDistance())));
 			}
 		} catch (Exception e) {
-			// Label: "No workouts found"
+
 		}
 	}
 
 	private static class Workout extends RecursiveTreeObject<Workout> {
-		private final String date;
-		private final String duration;
-		private final String pulse;
-		private final String type;
-		private final String distance;
+		private final String date, duration, pulse, type, distance;
+
 
 		public Workout(String date, String type, String pulse, String duration, String distance) {
-			this.date = (date);
-			this.duration = (duration);
-			this.pulse = (pulse);
-			this.type = (type);
-			this.distance = (distance);
+			this.date = date;
+			this.duration = duration;
+			this.pulse = pulse;
+			this.type = type;
+			this.distance = distance;
 		}
 
 		public String getDate() {

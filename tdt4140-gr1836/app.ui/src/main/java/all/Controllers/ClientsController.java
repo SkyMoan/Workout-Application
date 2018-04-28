@@ -16,13 +16,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableColumn;
-import all.MainController;
+import all.SuperController;
 import Users.UserTempList;
 
-public class ClientsController extends MainController {
-	/*
-	 * @FXML private Button homeBtn;
-	 */
+public class ClientsController extends SuperController {
+
 	private ArrayList<UserTempList> myClients = new ArrayList<UserTempList>();
 	private ArrayList<String> myClientsNames = new ArrayList<String>();
 
@@ -59,23 +57,10 @@ public class ClientsController extends MainController {
 			e.printStackTrace();
 		}
 	}
-	/*
-	 * private ArrayList<User> parseCoaches() { return this.app.getCoachesAsList();
-	 * }
-	 */
+
 
 	private void setClients() {
-		// fill stuff
-		/*
-		 * name.setCellValueFactory(new PropertyValueFactory<UserTempList,
-		 * String>("name")); city.setCellValueFactory(new
-		 * PropertyValueFactory<UserTempList, String>("city"));
-		 * age.setCellValueFactory(new PropertyValueFactory<UserTempList,
-		 * String>("age")); email.setCellValueFactory(new
-		 * PropertyValueFactory<UserTempList, String>("email"));
-		 * 
-		 * view.getItems().setAll(parseCoaches());
-		 */
+
 		usernameColumn.setCellValueFactory(
 				(TreeTableColumn.CellDataFeatures<UserTempList, String> param) -> new ReadOnlyStringWrapper(
 						param.getValue().getValue().getUsername()));
@@ -89,13 +74,13 @@ public class ClientsController extends MainController {
 				(TreeTableColumn.CellDataFeatures<UserTempList, String> param) -> new ReadOnlyStringWrapper(
 						param.getValue().getValue().getAge()));
 
-		// data
+
 		ObservableList<UserTempList> clients = FXCollections.observableArrayList();
 
 		loadClients(clients);
-		// Burde sortere coaches etter username her
 
-		// build tree
+
+
 		final TreeItem<UserTempList> root = new RecursiveTreeItem<UserTempList>(clients,
 				RecursiveTreeObject::getChildren);
 		tableView.setRoot(root);
@@ -127,11 +112,11 @@ public class ClientsController extends MainController {
 					e.printStackTrace();
 				}
 			} else {
-				clientLabel.setText("Please select a client");
+				clientLabel.setText("Select a client");
 
 			}
 		} else {
-			clientLabel.setText("Please select a client");
+			clientLabel.setText("Select a client");
 		}
 	}
 }

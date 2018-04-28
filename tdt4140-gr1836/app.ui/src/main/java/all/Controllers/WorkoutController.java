@@ -3,7 +3,7 @@ package all.Controllers;
 import java.io.IOException;
 
 import all.LayoutHandler;
-import all.MainController;
+import all.SuperController;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
@@ -12,32 +12,19 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleGroup;
 
-public class WorkoutController extends MainController {
+public class WorkoutController extends SuperController {
 
 	@FXML
-	private JFXTextField durationField;
-	@FXML
-	private JFXTextField distanceField;
-	@FXML
-	private JFXTextField pulseField;
+	private JFXTextField durationField, distanceField, pulseField;
 	@FXML
 	private JFXDatePicker dateField;
 	@FXML
 	private ToggleGroup exerciseType;
 	@FXML
-	private JFXRadioButton runningRadioButton;
-	@FXML
-	private JFXRadioButton swimmingRadioButton;
-	@FXML
-	private JFXRadioButton bikingRadioButton;
+	private JFXRadioButton runningRadioButton, swimmingRadioButton, bikingRadioButton;
 	@FXML
 	private Label invalidLabel;
 
-	/*
-	 * Checks that user have typed a positive duration and chosen a date for new
-	 * cardio workout. Then submits the data to database and send user back to main
-	 * menu. Edit: Also checks if your pulse is less than your max and positive
-	 */
 	@FXML
 	private void onSubmit() throws IOException {
 		double duration = -1;

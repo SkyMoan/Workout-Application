@@ -9,7 +9,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import Core.App;
 
-public class MainController {
+public class SuperController {
 
 	protected App app;
 	protected Stage root;
@@ -19,10 +19,10 @@ public class MainController {
 	// Shows a specified scene
 	public void loadScene(String path, Stage stage, App app) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(MainController.class.getResource(path));
+		loader.setLocation(SuperController.class.getResource(path));
 		Pane parent = (Pane) loader.load();
 		// Set controller
-		MainController controller = loader.getController();
+		SuperController controller = loader.getController();
 		controller.setApp(app);
 		controller.setRoot(stage);
 
@@ -34,18 +34,18 @@ public class MainController {
 		Stage root = new Stage();
 		FXMLLoader loader;
 		if (coach) {
-			loader = new FXMLLoader(MainController.class.getResource(LayoutHandler.mainCoachPane));
+			loader = new FXMLLoader(SuperController.class.getResource(LayoutHandler.mainCoachPane));
 			root.setTitle("Coach Menu");
 		}
 		else {
-			loader = new FXMLLoader(MainController.class.getResource(LayoutHandler.mainUserPane));
+			loader = new FXMLLoader(SuperController.class.getResource(LayoutHandler.mainUserPane));
 			root.setTitle("Triex");
 		}
 		
 		Pane parent = (Pane) loader.load();
 
 		// Set controller
-		MainController controller = loader.getController();
+		SuperController controller = loader.getController();
 		controller.setApp(app);
 		controller.setRoot(root);
 
@@ -62,14 +62,14 @@ public class MainController {
 	// Loads and shows the add new user stage
 	public void showRegisterStage(App app) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(MainController.class.getResource(LayoutHandler.signUpPane));
+		loader.setLocation(SuperController.class.getResource(LayoutHandler.signUpPane));
 		Pane pane = loader.load();
 
 		Stage stage = new Stage();
 		stage.setTitle("Register new user");
 
 		// Set this app to controller
-		MainController controller = loader.getController();
+		SuperController controller = loader.getController();
 		controller.setApp(app);
 
 		Scene scene = new Scene(pane);

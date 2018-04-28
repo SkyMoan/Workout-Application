@@ -21,27 +21,20 @@ public class FxApp extends Application {
 		app = new App();
 		app.getUsersFromDatabase();
 	}
-	//Main functionality for running our applicaaiton
+	//This is where the main application starts
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(FxApp.class.getResource(LayoutHandler.loginPane));
-
 		Parent root = loader.load();
 
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("Triex");
-		
-		//Set icon for application
-		//primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("images/dogecon.png")));
-		
+		primaryStage.setTitle("MemeEx");
 		primaryStage.setResizable(false);
-	
 
 		// Set app to controller
-		MainController controller = loader.getController();
+		SuperController controller = loader.getController();
 		controller.setApp(app);
 
 		primaryStage.show();

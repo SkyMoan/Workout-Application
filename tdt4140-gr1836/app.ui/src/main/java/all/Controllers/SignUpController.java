@@ -9,33 +9,16 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import all.MainController;
+import all.SuperController;
 
-public class SignUpController extends MainController {
-
-	@FXML
-	private JFXTextField usernameField;
+public class SignUpController extends SuperController {
 
 	@FXML
-	private JFXTextField nameField;
+	private JFXTextField usernameField, nameField, ageField, heightField, weightField, cityField;
+
 
 	@FXML
-	private JFXTextField ageField;
-
-	@FXML
-	private JFXTextField heightField;
-
-	@FXML
-	private JFXTextField weightField;
-
-	@FXML
-	private JFXTextField cityField;
-
-	@FXML
-	private JFXRadioButton maleRadioButton;
-
-	@FXML
-	private JFXRadioButton coachRadioButton;
+	private JFXRadioButton maleRadioButton, coachRadioButton;
 
 	@FXML
 	private JFXPasswordField passwordField;
@@ -49,14 +32,6 @@ public class SignUpController extends MainController {
 	@FXML
 	private Label invalidLabel;
 
-	/*
-	 * This function is called when user presses submit button. Check is username
-	 * field and both password fields have text in them and if password is equal in
-	 * the two password fields. If required fields are valid user is created and
-	 * window is closed. If form is not valid a labels text will tell the user to
-	 * fill out required fields.
-	 * Edit: Checks if username is allready taken
-	 */
 	@FXML
 	private void onSubmit() {
 
@@ -98,9 +73,7 @@ public class SignUpController extends MainController {
 		}
 	}
 
-	/*
-	 * Closes window when user press cancel button.
-	 */
+
 	@FXML
 	private void onCancel() {
 		Stage stage = (Stage) cancelButton.getScene().getWindow();

@@ -1,7 +1,7 @@
 //Helper class for a workout
 package Workouts;
 
-import all.workouts.Workouts;
+
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Workout implements Serializable{
 	private String date, type;
 
 	Workout(){
-		
+
 	}
 
 	public Workout(String type, double duration, double distance, double pulse, String date) {

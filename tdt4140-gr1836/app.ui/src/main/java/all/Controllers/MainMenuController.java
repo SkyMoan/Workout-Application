@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.*;
 
 import all.LayoutHandler;
-import all.MainController;
+import all.SuperController;
 import com.jfoenix.effects.JFXDepthManager;
 
 import javafx.application.Platform;
@@ -15,7 +15,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.Pane;
 import Workouts.TempList;
 
-public class MainMenuController extends MainController {
+public class MainMenuController extends SuperController {
 
 	@FXML
 	private BarChart<String, Number> barChart;
