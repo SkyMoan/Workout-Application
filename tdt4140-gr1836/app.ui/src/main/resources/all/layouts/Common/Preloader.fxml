@@ -3,8 +3,8 @@
 <?import com.jfoenix.controls.JFXSpinner?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="328.0" prefWidth="356.0" style="-fx-background-color: #263238;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="660.0" style="-fx-background-color: #263238;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXSpinner layoutX="153.0" layoutY="139.0" />
+      <JFXSpinner layoutX="212.0" layoutY="159.0" prefWidth="252.0" />
    </children>
 </AnchorPane>
